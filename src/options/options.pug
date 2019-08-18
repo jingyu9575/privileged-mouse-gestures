@@ -1,6 +1,122 @@
 extends ../common/base.i.pug
 append head
-	link(rel="stylesheet" href="options.css")
+	- subtitle = 'options'
+	link(rel='stylesheet' href='options.css')
 append body
+	x-tabs
+		x-tabs-nav(tabindex='0')
+			x-tab.icon-text(active)
+				svg.icon: use(href='../icons/photon-icons.svg#preferences')
+				span(data-i18n='general')
+			x-tab.icon-text
+				svg.icon: use(href='../icons/extra-icons.svg#mouse-gestures')
+				span(data-i18n='mapping')
+		x-tabs-main(same-size)
+			x-page(active)
+				label.input-label
+					span(data-i18n='mouseGestureButton')
+					select(data-key='mouseGestureButton')
+						option(value='left' data-i18n='left')
+						option(value='middle' data-i18n='middle')
+						option(value='right' data-i18n='right')
+				hr
+				label.input-label
+					input(type='checkbox' data-key='displayTrace')
+					span(data-i18n='displayTrace')
+				div
+					label.input-label
+						span(data-i18n='traceColor')
+						input(type='color' data-key='traceColor')
+					span.additional-number-container
+						input(data-key='traceColorAlpha'
+							type='number' min='0' max='100')
+						span %
+				label.input-label
+					span(data-i18n='traceWidth')
+					input(type='number' step='any' min='1' data-key='traceWidth')
+				hr
+				label.input-label
+					input(type='checkbox' data-key='displayStatus')
+					span(data-i18n='displayStatus')
+				label.input-label
+					span(data-i18n='statusFont')
+					input.font-input(data-key='statusFont')
+				div
+					label.input-label
+						span(data-i18n='statusTextColor')
+						input(type='color' data-key='statusTextColor')
+					span.additional-number-container
+						input(data-key='statusTextColorAlpha'
+							type='number' min='0' max='100')
+						span %
+				div
+					label.input-label
+						span(data-i18n='statusBackgroundColor')
+						input(type='color' data-key='statusBackgroundColor')
+					span.additional-number-container
+						input(data-key='statusBackgroundColorAlpha'
+							type='number' min='0' max='100')
+						span %
+				div
+					label.input-label
+						span(data-i18n='statusBorderColor')
+						input(type='color' data-key='statusBorderColor')
+					span.additional-number-container
+						input(data-key='statusBorderColorAlpha'
+							type='number' min='0' max='100')
+						span %
+				.additional-number-container
+					span(data-i18n='statusPosition')
+					span.additional-number-prefix X=
+					input(data-key='statusPositionX'
+							type='number' min='0' max='100')
+					span %
+					span.additional-number-prefix Y=
+					input(data-key='statusPositionY'
+						type='number' min='0' max='100')
+					span %
+				hr
+				div
+					label.input-label
+						span(data-i18n='gestureDirections')
+						select(data-key='gestureDirections')
+							option(value='RDLU' data-i18n='directions90deg')
+							option(value='RRdDLdLLuURu' data-i18n='directions45deg')
+					span#gesture-directions-code-example.gesture-code-example
+				div
+					label.input-label
+						input(type='checkbox' data-key='wheelGestures')
+						span(data-i18n='wheelGestures')
+					span.gesture-code-example WheelR WheelD WheelL WheelU
+				div
+					label.input-label
+						input(type='checkbox' data-key='rockerGestures')
+						span(data-i18n='rockerGestures')
+					span.gesture-code-example RockerR RockerL
+				hr
+				a(target="_blank" href="/lib/LICENSE-3RD-PARTY.txt" data-i18n="license3rdParty")
+			x-page
+				table#mapping-table
+					thead
+						tr
+							th(data-i18n='command')
+							th(data-i18n='gesture')
+							th
+					tbody
+				div
+					button#add-mapping-row.icon-text
+						svg.icon: use(href='../icons/photon-icons.svg#new')
+						span(data-i18n='add')
 	
+	template#mapping-row-template
+		tr.mapping-row
+			td
+				select.command-select
+			td
+				input.gesture-input(required)
+			td
+				button.record.icon-button(data-i18n-title='record')
+					svg.icon: use(href='../icons/extra-icons.svg#record')
+				button.remove.icon-button(data-i18n-title='remove')
+					svg.icon: use(href='../icons/photon-icons.svg#stop')
 	script(type='module' src='options.js')

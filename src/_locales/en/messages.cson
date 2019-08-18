@@ -1,4 +1,94 @@
 extensionName:
-	message: ''
+	message: 'Privileged Mouse Gestures'
 extensionDescription:
-	message: ''
+	message: 'Privileged mouse gestures extension that works on restricted pages.'
+options:
+	message: 'Options'
+general:
+	message: 'General'
+mouseGestureButton:
+	message: 'Mouse gesture button:'
+left:
+	message: 'Left'
+middle:
+	message: 'Middle'
+right:
+	message: 'Right'
+displayTrace:
+	message: 'Display trace'
+traceColor:
+	message: 'Trace color:'
+traceWidth:
+	message: 'Trace width:'
+displayStatus:
+	message: 'Display status'
+statusFont:
+	message: 'Status font (CSS):'
+statusTextColor:
+	message: 'Status text color:'
+statusBackgroundColor:
+	message: 'Status background color:'
+statusBorderColor:
+	message: 'Status border color:'
+statusPosition:
+	message: 'Status position:'
+gestureDirections:
+	message: 'Gesture directions:'
+directions90deg:
+	message: '90° directions'
+directions45deg:
+	message: '45° directions'
+wheelGestures:
+	message: 'Wheel gestures'
+rockerGestures:
+	message: 'Rocker gestures'
+license3rdParty:
+	message: 'Third-Party Copyright Notices'
+mapping:
+	message: 'Mapping'
+command:
+	message: 'Command'
+gesture:
+	message: 'Gesture'
+add:
+	message: 'Add'
+record:
+	message: 'Record'
+remove:
+	message: 'Remove'
+gestureConflict:
+	message: 'This gesture conflicts with another command.'
+tab:
+	message: 'Tab'
+newTab:
+	message: 'New Tab'
+closeTab:
+	message: 'Close Tab'
+previousTab:
+	message: 'Previous Tab'
+nextTab:
+	message: 'Next Tab'
+duplicateTab:
+	message: 'Duplicate Tab'
+navigation:
+	message: 'Navigation'
+back:
+	message: 'Back'
+forward:
+	message: 'Forward'
+stop:
+	message: 'Stop'
+reload:
+	message: 'Reload'
+upperLevel:
+	message: 'Upper Level'
+page:
+	message: 'Page'
+scrollUp:
+	message: 'Scroll Up'
+scrollDown:
+	message: 'Scroll Down'
+scrollToTop:
+	message: 'Scroll to Top'
+scrollToBottom:
+	message: 'Scroll to Bottom'

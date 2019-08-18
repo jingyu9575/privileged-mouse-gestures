@@ -1,0 +1,38 @@
+html, body, #body-form
+	display: flex
+	flex-direction: column
+	flex: 1
+	margin: 0
+	padding: 0
+
+html
+	width: 100%
+	height: 100%
+
+body
+	font: caption
+	font-size: 14px
+	user-select: none
+	-webkit-user-select: none
+
+button, input, select
+	font-size: inherit
+
+[hidden]
+	display: none !important
+
+.icon-text
+	> .icon
+		width: 1em
+		height: 1em
+		margin-right: 0.6ch
+
+	> *
+		vertical-align: middle
+
+.input-label
+	> *
+		vertical-align: middle
+
+	> span:not(:last-child)
+		padding-right: 0.6ch

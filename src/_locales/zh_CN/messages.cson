@@ -1,4 +1,94 @@
 extensionName:
-	message: ''
+	message: '高权限鼠标手势'
 extensionDescription:
-	message: ''
+	message: '高权限鼠标手势扩展，可在受限页面中工作。'
+options:
+	message: '选项'
+general:
+	message: '常规'
+mouseGestureButton:
+	message: '鼠标手势按钮：'
+left:
+	message: '左'
+middle:
+	message: '中'
+right:
+	message: '右'
+displayTrace:
+	message: '显示轨迹'
+traceColor:
+	message: '轨迹颜色：'
+traceWidth:
+	message: '轨迹宽度：'
+displayStatus:
+	message: '显示状态'
+statusFont:
+	message: '状态字体（CSS）：'
+statusTextColor:
+	message: '状态文字颜色：'
+statusBackgroundColor:
+	message: '状态背景颜色：'
+statusBorderColor:
+	message: '状态边框颜色：'
+statusPosition:
+	message: '状态位置：'
+gestureDirections:
+	message: '手势方向：'
+directions90deg:
+	message: '90° 方向'
+directions45deg:
+	message: '45° 方向'
+wheelGestures:
+	message: '滚轮手势'
+rockerGestures:
+	message: '摇摆手势'
+license3rdParty:
+	message: '第三方版权声明'
+mapping:
+	message: '映射'
+command:
+	message: '命令'
+gesture:
+	message: '手势'
+add:
+	message: '添加'
+record:
+	message: '录制'
+remove:
+	message: '删除'
+gestureConflict:
+	message: '此手势与另一个命令冲突。'
+tab:
+	message: '标签页'
+newTab:
+	message: '新建标签页'
+closeTab:
+	message: '关闭标签页'
+previousTab:
+	message: '上一个标签页'
+nextTab:
+	message: '下一个标签页'
+duplicateTab:
+	message: '克隆标签页'
+navigation:
+	message: '导航'
+back:
+	message: '后退'
+forward:
+	message: '前进'
+stop:
+	message: '停止载入'
+reload:
+	message: '重新载入'
+upperLevel:
+	message: '向上一级'
+page:
+	message: '页面'
+scrollUp:
+	message: '向上滚动'
+scrollDown:
+	message: '向下滚动'
+scrollToTop:
+	message: '滚动到顶部'
+scrollToBottom:
+	message: '滚动到底部'

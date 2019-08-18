@@ -1,0 +1,17 @@
+[
+	namespace: 'windowOverlay'
+	functions: [
+		name: 'setWindowOverlay'
+		type: 'function'
+		async: true
+		allowAmbiguousOptionalArguments: true
+		parameters: []
+	,	
+		name: 'getWindowSize'
+		type: 'function'
+		async: true
+		allowAmbiguousOptionalArguments: true
+		parameters: []
+	]
+	events: []
+]

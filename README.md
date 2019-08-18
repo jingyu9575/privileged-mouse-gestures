@@ -1,6 +1,12 @@
-# webext-template
+# Privileged Mouse Gestures
 
-My personal WebExtension template.
+Privileged mouse gestures extension for Firefox. Unlike normal WebExtensions, it Works on Firefox's built-in pages, Mozilla's restricted pages and tabs that are loading.
+
+## Download
+
+The extension XPI files can be found at [releases](https://github.com/jingyu9575/privileged-mouse-gestures/releases).
+
+As a privileged extension, this is unsigned and can only be installed on Firefox Developer Edition, Nightly, unbranded versions or some third-party builds.
 
 ## Build
 

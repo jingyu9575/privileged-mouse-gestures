@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<symbol id="mouse-gestures" viewBox="0 0 16 16">
+			<g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke-width="2" d="M 1,1 V 15 H 15 V 1 H 1"></path>
+				<path stroke-width="1" d="m 5,5 v 6 h 5"></path>
+				<path stroke-width="0.5" stroke-linejoin="miter" d="M 11,11 9,10 v 2 z"></path>
+				<path stroke-width="0.6" stroke-linejoin="miter" d="m 9.5,10.5 v 1"></path>
+			</g>
+		</symbol>
+		<symbol id="record" viewBox="0 0 16 16">
+			<circle stroke="currentColor" fill="none" stroke-width="2" cx="8" cy="8" r="7" />
+			<circle stroke="none" fill="currentColor" cx="8" cy="8" r="4" />
+		</symbol>
+	</defs>
+</svg>

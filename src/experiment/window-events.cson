@@ -1,0 +1,55 @@
+[
+	namespace: 'windowEvents'
+	functions: []
+	events: [
+		name: 'onMouseDown'
+		type: 'function'
+		allowAmbiguousOptionalArguments: true
+		parameters: []
+		extraParameters: [
+			name: 'options'
+			type: 'any'
+			optional: true
+		]
+	,
+		name: 'onMouseUp'
+		type: 'function'
+		allowAmbiguousOptionalArguments: true
+		parameters: []
+		extraParameters: [
+			name: 'options'
+			type: 'any'
+			optional: true
+		]
+	,
+		name: 'onMouseMove'
+		type: 'function'
+		allowAmbiguousOptionalArguments: true
+		parameters: []
+		extraParameters: [
+			name: 'options'
+			type: 'any'
+			optional: true
+		]
+	,
+		name: 'onContextMenu'
+		type: 'function'
+		allowAmbiguousOptionalArguments: true
+		parameters: []
+		extraParameters: [
+			name: 'options'
+			type: 'any'
+			optional: true
+		]
+	,
+		name: 'onWheel'
+		type: 'function'
+		allowAmbiguousOptionalArguments: true
+		parameters: []
+		extraParameters: [
+			name: 'options'
+			type: 'any'
+			optional: true
+		]
+	]
+]

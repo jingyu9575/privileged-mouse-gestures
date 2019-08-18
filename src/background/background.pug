@@ -2,5 +2,11 @@ doctype html
 html
 	head
 		meta(charset='utf-8')
+		link(rel='stylesheet' href='background.css')
 	body
+		template#text-measurer-template
+			.text-measurer
+				span.text-measurer-text
+				span.text-measurer-baseline
+
 		script(type='module' src='background.js')
