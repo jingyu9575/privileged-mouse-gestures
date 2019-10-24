@@ -22,10 +22,7 @@ function contentCommand<Ts extends any[]>(
 
 function docShellCommand(cmd: string) {
 	return contentCommand((cmd: string) => {
-		const docShell = (window as any).QueryInterface(
-			(Components as any).interfaces.nsIInterfaceRequestor)
-			.getInterface((Components as any).interfaces.nsIDocShell)
-		docShell.doCommand(cmd)
+		(window as any).docShell.doCommand(cmd)
 	}, cmd)
 }
 
