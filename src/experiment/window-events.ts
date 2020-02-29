@@ -28,9 +28,6 @@ class windowEvents extends ExtensionAPI {
 			if (!wrapper) return
 			const target = wnd.document.documentElement
 			if (!target) return
-			// XUL <window> has screen position
-			const targetScreenPos: { screenX: number, screenY: number } =
-				'screenX' in target && 'screenY' in target ? target : wnd
 
 			if (isRemove) {
 				const listener = map.get(wnd)
@@ -51,8 +48,8 @@ class windowEvents extends ExtensionAPI {
 
 					const details = {
 						altKey, button, buttons,
-						x: screenX - targetScreenPos.screenX,
-						y: screenY - targetScreenPos.screenY,
+						x: screenX - Math.round((wnd as any).mozInnerScreenX),
+						y: screenY - Math.round((wnd as any).mozInnerScreenY),
 						ctrlKey, metaKey, movementX, movementY, shiftKey,
 						windowId: wrapper.id,
 						clientWidth: target.clientWidth,
