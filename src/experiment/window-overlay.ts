@@ -1,5 +1,3 @@
-export { }
-
 class windowOverlay extends ExtensionAPI {
 	private readonly overlayMap = new Map<string, {
 		canvas: HTMLCanvasElement, onClose: { close: () => void }
@@ -78,5 +76,5 @@ class windowOverlay extends ExtensionAPI {
 	}
 }
 Object.assign(globalThis, { windowOverlay })
-type API = ReturnType<typeof windowOverlay.prototype.getAPIImpl>
-declare global { namespace browser { const windowOverlay: API } }
+type windowOverlayAPI = ReturnType<typeof windowOverlay.prototype.getAPIImpl>
+declare namespace browser { const windowOverlay: windowOverlayAPI }

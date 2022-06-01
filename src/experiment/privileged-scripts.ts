@@ -1,22 +1,26 @@
-export { }
-
 class privilegedScripts extends ExtensionAPI {
 	private static actorURL: string = (globalThis as any).extensions
 		.modules.get(privilegedScripts.name).url.replace(/\/[^\/]*$/, '/actor/v0/')
 	private static actorName = 'PrivilegedScripts_privileged_mouse_gestures_qw_thucfb_com'
 	private static refCount = 0
 
-	private static init() {
+	private static init(context: BaseContext) {
+		const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm")
+		const mozExtHandler = Services.io.getProtocolHandler("moz-extension")
+			.QueryInterface(Components.interfaces.nsISubstitutingProtocolHandler)
+		const resHandler = Services.io.getProtocolHandler("resource")
+			.QueryInterface(Components.interfaces.nsIResProtocolHandler)
+		const resName = 'PrivilegedScripts_privileged_mouse_gestures_qw_thucfb_com'
+		const jarURL = mozExtHandler.getSubstitution(context.extension.uuid).spec
+		resHandler.setSubstitution(resName, Services.io.newURI(jarURL, null, null))
 		const rand = `${Date.now()}_${Math.random()}`
 		ChromeUtils.registerWindowActor(this.actorName, {
 			allFrames: true,
 			parent: {
-				moduleURI: privilegedScripts.actorURL +
-					`privileged-scripts-parent.js?rand=${rand}`,
+				moduleURI: `resource://${resName}/experiment/actor/v0/privileged-scripts-parent.js?rand=${rand}`,
 			},
 			child: {
-				moduleURI: privilegedScripts.actorURL +
-					`privileged-scripts-child.js?rand=${rand}`,
+				moduleURI: `resource://${resName}/experiment/actor/v0/privileged-scripts-child.js?rand=${rand}`,
 			}
 		})
 		privilegedScripts.refCount++
@@ -27,9 +31,9 @@ class privilegedScripts extends ExtensionAPI {
 		ChromeUtils.unregisterWindowActor(this.actorName)
 	}
 
-	getAPIImpl = (that: this, context: BaseContext) => ({
+	getAPIImpl = (_that: this, context: BaseContext) => ({
 		_init: (() => {
-			privilegedScripts.init()
+			privilegedScripts.init(context)
 			context.extension.callOnClose(privilegedScripts)
 		})(),
 
@@ -67,5 +71,5 @@ class privilegedScripts extends ExtensionAPI {
 	}
 }
 Object.assign(globalThis, { privilegedScripts })
-type API = ReturnType<typeof privilegedScripts.prototype.getAPIImpl>
-declare global { namespace browser { const privilegedScripts: API } }
+type privilegedScriptsAPI = ReturnType<typeof privilegedScripts.prototype.getAPIImpl>
+declare namespace browser { const privilegedScripts: privilegedScriptsAPI }

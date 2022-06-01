@@ -1,6 +1,3 @@
-export { }
-
-const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm")
 
 class PrivilegedScripts_privileged_mouse_gestures_qw_thucfb_comChild
 	extends JSWindowActorChild {
@@ -11,6 +8,7 @@ class PrivilegedScripts_privileged_mouse_gestures_qw_thucfb_comChild
 
 	constructor() {
 		super()
+		const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm")
 		Services.cpmm.addMessageListener('Extension:Shutdown',
 			(message: ReceiveMessageArgument) => {
 				const id = message.data.id
@@ -48,7 +46,7 @@ class PrivilegedScripts_privileged_mouse_gestures_qw_thucfb_comChild
 						{ hasReturnValue: true }).executeInGlobal(sandbox)
 				}
 				return { result: await result }
-			} catch (error) {
+			} catch (error: any) {
 				return { error: error.message }
 			}
 		}

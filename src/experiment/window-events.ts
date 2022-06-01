@@ -1,5 +1,3 @@
-export { }
-
 var { ExtensionCommon: {
 	EventManager,
 } } = ChromeUtils.import('resource://gre/modules/ExtensionCommon.jsm')
@@ -109,20 +107,18 @@ class windowEvents extends ExtensionAPI {
 	}
 }
 Object.assign(globalThis, { windowEvents })
-type API = ReturnType<typeof windowEvents.prototype.getAPIImpl>
-declare global {
-	namespace browser { const windowEvents: API }
-	namespace browser.windowEvents {
-		interface MouseEventDetails extends Pick<MouseEvent,
-			'altKey' | 'button' | 'buttons' | 'x' | 'y' |
-			'ctrlKey' | 'metaKey' | 'movementX' | 'movementY' | 'shiftKey'> {
-			windowId: number
-			clientWidth: number
-			clientHeight: number
-			devicePixelRatio: number
-		}
-
-		interface WheelEventDetails extends MouseEventDetails, Pick<WheelEvent,
-			'deltaMode' | 'deltaX' | 'deltaY' | 'deltaZ'> { }
+type windowEventsAPI = ReturnType<typeof windowEvents.prototype.getAPIImpl>
+declare namespace browser { const windowEvents: windowEventsAPI }
+declare namespace browser.windowEvents {
+	interface MouseEventDetails extends Pick<MouseEvent,
+		'altKey' | 'button' | 'buttons' | 'x' | 'y' |
+		'ctrlKey' | 'metaKey' | 'movementX' | 'movementY' | 'shiftKey'> {
+		windowId: number
+		clientWidth: number
+		clientHeight: number
+		devicePixelRatio: number
 	}
+
+	interface WheelEventDetails extends MouseEventDetails, Pick<WheelEvent,
+		'deltaMode' | 'deltaX' | 'deltaY' | 'deltaZ'> { }
 }

@@ -134,6 +134,8 @@ declare global {
 				version?: string, filename?: string, lineNo?: number): any
 			nukeSandbox(sandbox: Sandbox): void
 		}
+		manager: any
+		interfaces: any
 	}
 
 	class ExtensionAPI {
@@ -223,4 +225,6 @@ declare global {
 		name: string
 		data: any
 	}
+
+	const IOUtils: any
 }
