@@ -8,7 +8,10 @@ class PrivilegedScripts_privileged_mouse_gestures_qw_thucfb_comChild
 
 	constructor() {
 		super()
-		const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm")
+		let Services: any
+		try {
+			Services = ChromeUtils.import("resource://gre/modules/Services.jsm").Services
+		} catch { Services = (globalThis as any).Services }
 		Services.cpmm.addMessageListener('Extension:Shutdown',
 			(message: ReceiveMessageArgument) => {
 				const id = message.data.id

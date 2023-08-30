@@ -5,7 +5,10 @@ class privilegedScripts extends ExtensionAPI {
 	private static refCount = 0
 
 	private static init(context: BaseContext) {
-		const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm")
+		let Services: any
+		try {
+			Services = ChromeUtils.import("resource://gre/modules/Services.jsm").Services
+		} catch { Services = (globalThis as any).Services }
 		const mozExtHandler = Services.io.getProtocolHandler("moz-extension")
 			.QueryInterface(Components.interfaces.nsISubstitutingProtocolHandler)
 		const resHandler = Services.io.getProtocolHandler("resource")
